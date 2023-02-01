@@ -2,8 +2,8 @@ const hre = require("hardhat");
 
 async function main() {
 	//hardhat-ethers is a plugin that adds ethers.js to hardhat
-	const Lock = await hre.ethers.getContractFactory("Contract");
-	const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+	const Contract = await hre.ethers.getContractFactory("Contract"); //get the contract factory
+	const contract = await Contract.deploy(); //deploy the contract
 
 	await lock.deployed();
 
