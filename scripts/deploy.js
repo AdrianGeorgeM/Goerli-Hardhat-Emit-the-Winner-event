@@ -5,11 +5,9 @@ async function main() {
 	const Contract = await hre.ethers.getContractFactory("Contract"); //get the contract factory
 	const contract = await Contract.deploy(); //deploy the contract
 
-	await lock.deployed();
+	await contract.deployed();
 
-	console.log(
-		`Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-	);
+	console.log(`Contract was deployed to ${contract.address}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
